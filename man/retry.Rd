@@ -6,10 +6,12 @@
 In general cases this functions is to be used with readLines or
 rjson::fromJSON.}
 \usage{
-retry(.FUN, max.attempts = 5, sleep.seconds = 60)
+retry(.FUN, url, max.attempts = 5, sleep.seconds = 60)
 }
 \arguments{
 \item{.FUN}{is a function which is going to be executed.}
+
+\item{url}{is a function which is going to be executed.}
 }
 \value{
 it returns API content

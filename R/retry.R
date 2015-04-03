@@ -3,22 +3,30 @@
 #'rjson::fromJSON. 
 #'
 #'@param .FUN is a function which is going to be executed. 
+#'@param url is a function which is going to be executed. 
 #'
 #'@return it returns API content 
 #'@export
 
-retry <- function(.FUN,max.attempts=5,sleep.seconds=60) 
+
+
+retry <- function(.FUN,url,max.attempts=5,sleep.seconds=60) 
 {
+  #utils::setInternet2(use=TRUE)
   x <- NULL
+  url<-url
   for (i in 1:max.attempts)
   {
     f <- substitute(.FUN)
-    x <- try(eval(f))
+    
+    x <- try({#utils::setInternet2(use=TRUE)
+      eval(f)})
     if (class(x) == "try-error")
     {
       #print("Readline Error")
       #Sys.sleep(sleep.seconds)
-      x <- try(eval(f))
+      x <- try({#utils::setInternet2(use=TRUE)
+               eval(f)})
     }
     else
     {
