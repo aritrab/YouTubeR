@@ -10,11 +10,11 @@
 
 
 
-retry <- function(.FUN,url,max.attempts=5,sleep.seconds=30) 
+retry_raw_data <- function(.FUN,raw.data,max.attempts=5,sleep.seconds=30) 
 {
   #utils::setInternet2(use=TRUE)
   x <- NULL
-  url<-url
+  raw.data<-raw.data
   for (i in 1:max.attempts)
   {
     f <- substitute(.FUN)
