@@ -2,17 +2,32 @@
 % Please edit documentation in R/getChannelData.R
 \name{getChannelData}
 \alias{getChannelData}
-\title{Channel Data}
+\title{This function mainly takes the user name or channel name as input and returns some static data
+associated with the videos of the channel.}
 \usage{
 getChannelData(name)
 }
 \arguments{
-\item{name}{is a string variable}
+\item{This}{function takes a string variable as a input. Here the string variable is
+the name of the Channel. For example, if you want to download data associated with the
+YouTube channel AIB, the just use the last part of the follow URL.
+https://www.youtube.com/user/allindiabakchod , ie "allindiabakchod"}
 }
 \value{
-dataset.ls
+This function returns a table data frame containing the following coloumns.
+"APIURL","DOP","Catagory","Subcategory","Title","Description","YouTubeURL","Author","Duration"
+and "VideoID".
+
+APIURL is a string variable which holds the API URL associated with the video. The DOP has the date of publishing of a perticular
+video. Catagory is also another string variable. This coloumn has the catagory of the video. This option is selected from the options
+provided by YouTube. Subcategory is quite similar to Catagory. Title is a string variable which has the title of a video. This supports
+unicode. Description is also a string variable which contains the metadata associated with the video. This segments holds the video
+description to be specific. YouTubeURL is the video url. Author is a string variable which contains the name of the channel. Duration is a
+numeric variable which contains the video duration in seconds. Video ID is a string variable which contains a 10 digit unique
+ID associated with respective video. For example in case of https://www.youtube.com/watch?v=uED-OpeDapk URL, "uED-OpeDapk" is the videoID.
 }
 \description{
-Channel Data
+This function mainly takes the user name or channel name as input and returns some static data
+associated with the videos of the channel.
 }
 
