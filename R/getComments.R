@@ -29,7 +29,7 @@ getComments<-function(x){
       content[[id]]<-data$feed$entry[[j]]$content$`$t`
       author[[id]]<-data$feed$entry[[j]]$author[[1]]$name$`$t`
       channelID[[id]]<-data$feed$entry[[j]]$`yt$channelId`$`$t`
-      replyCount[[id]]<-data$feed$entry[[j]]$`yt$replyCount`
+      replyCount[[id]]<-as.numeric(data$feed$entry[[j]]$`yt$replyCount`)
       videoID[[id]]<-data$feed$entry[[j]]$`yt$videoid`$`$t`
       j=j+1
       id=id+1

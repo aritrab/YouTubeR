@@ -2,8 +2,7 @@
 % Please edit documentation in R/getChannelData.R
 \name{getChannelData}
 \alias{getChannelData}
-\title{This function mainly takes the user name or channel name as input and returns some static data
-associated with the videos of the channel.}
+\title{getChannelData}
 \usage{
 getChannelData(name)
 }
@@ -23,8 +22,10 @@ video. Catagory is also another string variable. This coloumn has the catagory o
 provided by YouTube. Subcategory is quite similar to Catagory. Title is a string variable which has the title of a video. This supports
 unicode. Description is also a string variable which contains the metadata associated with the video. This segments holds the video
 description to be specific. YouTubeURL is the video url. Author is a string variable which contains the name of the channel. Duration is a
-numeric variable which contains the video duration in seconds. Video ID is a string variable which contains a 10 digit unique
-ID associated with respective video. For example in case of https://www.youtube.com/watch?v=uED-OpeDapk URL, "uED-OpeDapk" is the videoID.
+numeric variable which contains the video duration in seconds. Video ID is a string variable which contains a 11 digit unique
+ID associated with respective video.
+
+For example in case of https://www.youtube.com/watch?v=uED-OpeDapk URL, "uED-OpeDapk" is the videoID.
 }
 \description{
 This function mainly takes the user name or channel name as input and returns some static data

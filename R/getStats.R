@@ -28,8 +28,9 @@ getStats <- function(videoid){
   vidID<-rd$entry$`media$group`$`yt$videoid`$`$t`
   avgrt<-rd$entry$`gd$rating`$average
   noofrater<-rd$entry$`gd$rating`$numRaters
-  dataset.ls<-list(userId,dop,term,label,title,description,comment.countHint,link,author,duration,favs,views,dislikes,likes,uploaderID,vidID,avgrt,noofrater)
+  dataset.df<-fbshare(vidID)
+  shared.count<-twittershare(vidID)
+  dataset.ls<-list(userId,dop,term,label,title,description,comment.countHint,link,author,duration,favs,views,dislikes,likes,uploaderID,vidID,avgrt,noofrater,dataset.df[[1]][[1]][1],dataset.df[[1]][[1]][2],dataset.df[[1]][[1]][3],shared.count)
   dataset.ls<-as.data.frame(dataset.ls)
-  names(dataset.ls)<-c("UserID","DOP","Category","Subcatagory","Title","Description","NoofComments","URL","Author","Duration","FavCount","ViewConunt","DislikeCount","LikesCount","UploaderID","VideoID","AvgRt","NoodRaters")
-  dataset.ls<-dplyr::tbl_df(dataset.ls)
+  names(dataset.ls)<-c("UserID","DOP","Category","Subcatagory","Title","Description","NoofComments","URL","Author","Duration","FavCount","ViewConunt","DislikeCount","LikesCount","UploaderID","VideoID","AvgRt","NoodRaters","fb_share_count","fb_like_count","fb_comment_count","twitter_share_count")
   return (dataset.ls)}
